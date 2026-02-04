@@ -32,10 +32,6 @@ export default function Contact() {
       {/* Background */}
       <div className="absolute inset-0 bg-[#0a0a0a]" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-40 left-10 w-96 h-96 bg-amber-500/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-amber-600/5 rounded-full blur-[120px]" />
 
       <div className="container-custom relative z-10" ref={ref}>
         {/* Section Header */}
@@ -75,7 +71,7 @@ export default function Contact() {
 
             {/* Contact cards */}
             <div className="space-y-4">
-              <a 
+              <a
                 href="mailto:johnybernard@hotmail.com"
                 className="flex items-center gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/10 
                          hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300 group"
@@ -90,7 +86,7 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a 
+              <a
                 href="https://wa.me/5511999999999"
                 target="_blank"
                 rel="noopener noreferrer"

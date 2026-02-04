@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { 
-  Video, 
-  Tv, 
-  Lightbulb, 
-  Volume2, 
-  Settings, 
+import {
+  Video,
+  Tv,
+  Lightbulb,
+  Volume2,
+  Settings,
   Users,
   ArrowRight,
   Play
@@ -69,10 +69,6 @@ export default function Services() {
       {/* Background */}
       <div className="absolute inset-0 bg-[#0a0a0a]" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
-      
-      {/* Floating elements */}
-      <div className="absolute top-40 right-20 w-72 h-72 bg-amber-500/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-40 left-20 w-96 h-96 bg-amber-600/5 rounded-full blur-[120px]" />
 
       <div className="container-custom relative z-10" ref={ref}>
         {/* Section Header */}
@@ -107,15 +103,15 @@ export default function Services() {
             >
               <div className={`
                 relative h-full p-8 rounded-2xl border transition-all duration-500
-                ${hoveredIndex === index 
-                  ? 'bg-gradient-to-br from-amber-500/10 to-amber-600/5 border-amber-500/30' 
+                ${hoveredIndex === index
+                  ? 'bg-gradient-to-br from-amber-500/10 to-amber-600/5 border-amber-500/30'
                   : 'bg-white/[0.02] border-white/10 hover:border-white/20'}
               `}>
                 {/* Icon */}
                 <div className={`
                   w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-500
-                  ${hoveredIndex === index 
-                    ? 'bg-amber-500 text-black' 
+                  ${hoveredIndex === index
+                    ? 'bg-amber-500 text-black'
                     : 'bg-white/5 text-amber-500'}
                 `}>
                   <service.icon className="w-7 h-7" />
@@ -137,7 +133,7 @@ export default function Services() {
                 {/* Features */}
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature) => (
-                    <span 
+                    <span
                       key={feature}
                       className="text-xs px-3 py-1 rounded-full bg-white/5 text-white/40 border border-white/5"
                     >
@@ -150,8 +146,8 @@ export default function Services() {
                 <div className={`
                   absolute bottom-8 right-8 w-10 h-10 rounded-full flex items-center justify-center
                   transition-all duration-300
-                  ${hoveredIndex === index 
-                    ? 'bg-amber-500 text-black opacity-100 translate-x-0' 
+                  ${hoveredIndex === index
+                    ? 'bg-amber-500 text-black opacity-100 translate-x-0'
                     : 'bg-white/5 text-white/30 opacity-0 -translate-x-2'}
                 `}>
                   <ArrowRight className="w-5 h-5" />

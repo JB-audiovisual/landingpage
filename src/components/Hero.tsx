@@ -8,13 +8,37 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#0a0a0a]">
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[150px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-amber-600/5 rounded-full blur-[120px] animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute inset-0 bg-black">
+        {/* Gradient orbs - Cores da logo */}
+        {/* Ciano - Top Left */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px] animate-pulse-glow" />
+        <div className="absolute top-20 left-40 w-[300px] h-[300px] bg-cyan-400/15 rounded-full blur-[80px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
 
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(201,165,92,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(201,165,92,0.03)_1px,transparent_1px)] bg-[size:100px_100px]" />
+        {/* Magenta - Top Right */}
+        <div className="absolute top-10 right-0 w-[450px] h-[450px] bg-pink-600/22 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-40 right-32 w-[280px] h-[280px] bg-pink-500/18 rounded-full blur-[70px] animate-pulse-glow" style={{ animationDelay: '3s' }} />
+
+        {/* Roxo - Center */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+
+        {/* Ciano - Bottom Right */}
+        <div className="absolute bottom-0 right-10 w-[420px] h-[420px] bg-cyan-500/20 rounded-full blur-[90px] animate-pulse-glow" style={{ animationDelay: '2.5s' }} />
+
+        {/* Magenta - Bottom Left */}
+        <div className="absolute bottom-10 left-0 w-[380px] h-[380px] bg-pink-600/18 rounded-full blur-[85px] animate-pulse-glow" style={{ animationDelay: '0.5s' }} />
+
+        {/* Roxo - Bottom Center */}
+        <div className="absolute bottom-20 left-1/3 w-[320px] h-[320px] bg-purple-500/16 rounded-full blur-[75px] animate-pulse-glow" style={{ animationDelay: '3.5s' }} />
+
+        {/* Círculos menores para detalhes */}
+        <div className="absolute top-1/3 right-1/4 w-[250px] h-[250px] bg-cyan-400/14 rounded-full blur-[60px] animate-pulse-glow" style={{ animationDelay: '4s' }} />
+        <div className="absolute bottom-1/3 left-1/4 w-[230px] h-[230px] bg-pink-500/14 rounded-full blur-[55px] animate-pulse-glow" style={{ animationDelay: '4.5s' }} />
+
+        {/* Overlay escuro para controle de intensidade */}
+        <div className="absolute inset-0 bg-black/30" />
+
+        {/* Grid pattern sutil */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,212,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,0,110,0.04)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
 
       {/* Content */}

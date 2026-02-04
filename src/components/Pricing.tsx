@@ -103,8 +103,8 @@ export default function Pricing() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`
                 relative rounded-2xl p-8 transition-all duration-500
-                ${plan.popular 
-                  ? 'bg-gradient-to-br from-amber-500/20 to-amber-600/10 border-2 border-amber-500/50' 
+                ${plan.popular
+                  ? 'bg-gradient-to-br from-amber-500/20 to-amber-600/10 border-2 border-amber-500/50'
                   : 'bg-white/[0.02] border border-white/10 hover:border-white/20'}
               `}
             >
@@ -129,7 +129,7 @@ export default function Pricing() {
               <div className="mb-6">
                 <p className="text-amber-500/60 text-sm font-medium mb-1">{plan.subtitle}</p>
                 <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
-                
+
                 <div className="flex items-baseline gap-1">
                   <span className="text-white/50 text-lg">R$</span>
                   <span className="text-4xl font-black text-white">{plan.price}</span>
@@ -156,8 +156,8 @@ export default function Pricing() {
                 className={`
                   block w-full text-center py-4 rounded-full font-bold uppercase tracking-wider text-sm
                   transition-all duration-300
-                  ${plan.popular 
-                    ? 'bg-amber-500 text-black hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(201,165,92,0.4)]' 
+                  ${plan.popular
+                    ? 'bg-amber-500 text-black hover:bg-amber-400 hover:shadow-[0_0_30px_rgba(201,165,92,0.4)]'
                     : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/30'}
                 `}
               >
@@ -177,7 +177,7 @@ export default function Pricing() {
           <h3 className="text-xl font-bold text-white mb-6 text-center">Serviços Adicionais</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {additionalServices.map((service) => (
-              <div 
+              <div
                 key={service.name}
                 className="flex items-center justify-between p-4 bg-white/[0.02] rounded-xl border border-white/5"
               >
