@@ -188,7 +188,6 @@ export default function Contact() {
                     <option value="transmissao" className="bg-slate-900">Transmissão ao Vivo</option>
                     <option value="curso" className="bg-slate-900">Curso Online</option>
                     <option value="hibrido" className="bg-slate-900">Evento Híbrido</option>
-                    <option value="webinar" className="bg-slate-900">Webinar</option>
                     <option value="outro" className="bg-slate-900">Outro</option>
                   </select>
                 </div>

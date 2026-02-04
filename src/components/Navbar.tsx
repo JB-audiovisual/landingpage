@@ -23,7 +23,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-      
+
       const sections = navLinks.map(link => link.href.substring(1))
       for (const section of sections.reverse()) {
         const element = document.getElementById(section)
@@ -47,8 +47,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        isScrolled 
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/5' 
+        isScrolled
+          ? 'bg-black/80 backdrop-blur-xl border-b border-white/5'
           : 'bg-transparent'
       )}
     >
@@ -56,16 +56,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/10 flex items-center justify-center">
-              <Image
-                src="/logo.png"
-                alt="JB Audiovisual Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="JB Audiovisual Logo"
+              width={80}
+              height={80}
+              className="w-20 h-20 object-contain"
+              priority
+            />
             <div className="hidden sm:block">
               <span className="font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
                 JB Audiovisual

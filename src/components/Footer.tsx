@@ -28,27 +28,25 @@ export default function Footer() {
     <footer className="relative bg-[#050505] overflow-hidden">
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
-      
+
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="#home" className="inline-flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg overflow-hidden bg-white/10 flex items-center justify-center">
-                <Image
-                  src="/logo.png"
-                  alt="JB Audiovisual Logo"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 object-contain"
-                />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="JB Audiovisual Logo"
+                width={64}
+                height={64}
+                className="w-16 h-16 object-contain"
+              />
               <span className="font-bold text-lg text-white">JB Audiovisual</span>
             </Link>
-            
+
             <p className="text-white/40 text-sm leading-relaxed mb-6">
-              Transformando eventos em experiências memoráveis desde 2010. 
+              Transformando eventos em experiências memoráveis desde 2010.
               Tecnologia de ponta para sociedades médicas e empresas.
             </p>
 
@@ -80,7 +78,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.empresa.map((link) => (
                 <li key={link.label}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-white/40 hover:text-amber-500 transition-colors text-sm"
                   >
@@ -97,7 +95,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.servicos.map((link) => (
                 <li key={link.label}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-white/40 hover:text-amber-500 transition-colors text-sm"
                   >
@@ -113,8 +111,8 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-5">Contato</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <a 
-                  href="mailto:johnybernard@hotmail.com" 
+                <a
+                  href="mailto:johnybernard@hotmail.com"
                   className="text-white/40 hover:text-amber-500 transition-colors"
                 >
                   johnybernard@hotmail.com
@@ -132,7 +130,7 @@ export default function Footer() {
           <p className="text-white/30 text-sm">
             © {new Date().getFullYear()} JB Audiovisual & Tecnologia. Todos os direitos reservados.
           </p>
-          
+
           <button
             onClick={scrollToTop}
             className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center 
