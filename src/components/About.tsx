@@ -1,14 +1,32 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
 import { Award, Target, Lightbulb, Star, Quote } from 'lucide-react'
 
+const ceoImages = [
+  '/ceo-photo.png',
+  '/ceo.jpg',
+  '/ceo2.jpg',
+]
+
 export default function About() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  useEffect(() => {
+    if (ceoImages.length <= 1) return
+
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % ceoImages.length)
+    }, 5000)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <section id="sobre" className="section-padding relative overflow-hidden">
@@ -52,28 +70,28 @@ export default function About() {
 
               {/* Main image container */}
               <div className="relative bg-gradient-to-br from-amber-500/20 to-amber-600/20 rounded-2xl p-[2px]">
-                <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden aspect-[3/4]">
-                  <Image
-                    src="/ceo-photo.png"
-                    alt="Johny Bernardino - CEO JB Audiovisual"
-                    width={500}
-                    height={667}
-                    className="w-full h-full object-cover object-[center_35%]"
-                    priority
-                  />
+                <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden aspect-[3/4] relative">
+                  <AnimatePresence>
+                    <motion.div
+                      key={currentImageIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1 }}
+                      className="w-full h-full absolute inset-0"
+                    >
+                      <Image
+                        src={ceoImages[currentImageIndex]}
+                        alt={`Johny Bernard - CEO JB Audiovisual - Foto ${currentImageIndex + 1}`}
+                        fill
+                        className="object-cover object-[center_35%]"
+                        priority
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
               </div>
 
-              {/* Experience badge */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={isInView ? { scale: 1 } : {}}
-                transition={{ delay: 0.6, type: 'spring' }}
-                className="absolute -bottom-6 -right-6 bg-amber-500 text-black rounded-2xl p-6 shadow-2xl"
-              >
-                <div className="text-4xl font-black">16+</div>
-                <div className="text-sm font-semibold">Anos</div>
-              </motion.div>
             </div>
           </motion.div>
 

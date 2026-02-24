@@ -9,9 +9,6 @@ const plans = [
   {
     name: 'Masterclass',
     subtitle: 'Eventos até 5h',
-    price: '3.400',
-    period: 'por diária',
-    discount: '2 dias: R$ 6.120 (10% desc.)',
     icon: Star,
     popular: false,
     features: [
@@ -25,9 +22,6 @@ const plans = [
   {
     name: 'Cursos Online',
     subtitle: 'Eventos até 10h',
-    price: '4.200',
-    period: 'por diária',
-    discount: '2 dias: R$ 7.560 (10% desc.)',
     icon: Zap,
     popular: true,
     features: [
@@ -42,9 +36,6 @@ const plans = [
   {
     name: 'Simultâneo',
     subtitle: 'Tradução + Stream',
-    price: '7.530',
-    period: 'por diária',
-    discount: '2 dias: R$ 13.554 (10% desc.)',
     icon: Crown,
     popular: false,
     features: [
@@ -59,9 +50,9 @@ const plans = [
 ]
 
 const additionalServices = [
-  { name: 'Meetings / Webinars', price: '600', unit: 'por evento' },
-  { name: 'Apoio Audiovisual', price: '500', unit: 'por diária' },
-  { name: 'Apoio Manequim', price: '400', unit: 'por diária' },
+  { name: 'Meetings / Webinars', unit: 'por evento' },
+  { name: 'Apoio Audiovisual', unit: 'por diária' },
+  { name: 'Apoio Manequim', unit: 'por diária' },
 ]
 
 export default function Pricing() {
@@ -86,10 +77,10 @@ export default function Pricing() {
             Investimento
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
-            Tabela de <span className="text-gradient-gold">Preços 2026</span>
+            Nossas <span className="text-gradient-gold">Soluções</span>
           </h2>
           <p className="text-xl text-white/50 max-w-2xl mx-auto">
-            Soluções transparentes para cada necessidade. Todos os valores incluem equipamentos e operação.
+            Soluções personalizadas para transformar seu evento em uma experiência memorável. Solicite um orçamento direto pelo WhatsApp.
           </p>
         </motion.div>
 
@@ -127,15 +118,8 @@ export default function Pricing() {
 
               {/* Plan info */}
               <div className="mb-6">
-                <p className="text-amber-500/60 text-sm font-medium mb-1">{plan.subtitle}</p>
-                <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
-
-                <div className="flex items-baseline gap-1">
-                  <span className="text-white/50 text-lg">R$</span>
-                  <span className="text-4xl font-black text-white">{plan.price}</span>
-                </div>
-                <p className="text-white/40 text-sm mt-1">{plan.period}</p>
-                <p className="text-amber-500/80 text-sm mt-2">{plan.discount}</p>
+                <h3 className="text-3xl font-bold text-white mb-2">{plan.name}</h3>
+                <p className="text-amber-500/60 text-sm font-medium">{plan.subtitle}</p>
               </div>
 
               {/* Features */}
@@ -152,7 +136,9 @@ export default function Pricing() {
 
               {/* CTA */}
               <a
-                href="#contato"
+                href={`https://wa.me/5511961116437?text=${encodeURIComponent(`Olá, gostaria de solicitar um orçamento para um evento ${plan.name}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`
                   block w-full text-center py-4 rounded-full font-bold uppercase tracking-wider text-sm
                   transition-all duration-300
@@ -161,7 +147,7 @@ export default function Pricing() {
                     : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/30'}
                 `}
               >
-                Solicitar
+                Solicitar Orçamento
               </a>
             </motion.div>
           ))}
@@ -183,7 +169,6 @@ export default function Pricing() {
               >
                 <span className="text-white/70">{service.name}</span>
                 <div className="text-right">
-                  <span className="text-amber-500 font-bold">R$ {service.price}</span>
                   <span className="text-white/40 text-sm block">{service.unit}</span>
                 </div>
               </div>

@@ -11,7 +11,7 @@ const navLinks = [
   { href: '#home', label: 'Início' },
   { href: '#sobre', label: 'Sobre' },
   { href: '#servicos', label: 'Serviços' },
-  { href: '#precos', label: 'Preços' },
+  { href: '#precos', label: 'Orçamentos' },
   { href: '#contato', label: 'Contato' },
 ]
 
