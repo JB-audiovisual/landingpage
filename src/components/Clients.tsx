@@ -19,7 +19,7 @@ export default function Clients() {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f]" />
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
 
       <div className="container-custom relative z-10" ref={ref}>
         {/* Header */}

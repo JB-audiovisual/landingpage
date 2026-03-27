@@ -62,7 +62,7 @@ export default function Pricing() {
   return (
     <section id="precos" className="section-padding relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a]" />
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 
       <div className="container-custom relative z-10" ref={ref}>
@@ -96,7 +96,7 @@ export default function Pricing() {
                 relative rounded-2xl p-8 transition-all duration-500
                 ${plan.popular
                   ? 'bg-gradient-to-br from-amber-500/20 to-amber-600/10 border-2 border-amber-500/50'
-                  : 'bg-white/[0.02] border border-white/10 hover:border-white/20'}
+                  : 'bg-white/[0.02] border border-white/10 hover:border-amber-500/20'}
               `}
             >
               {/* Popular badge */}
