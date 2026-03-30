@@ -6,8 +6,8 @@ import { useRef } from 'react'
 
 const clients = [
   { name: 'AMIB', description: 'Associação de Medicina Intensiva Brasileira' },
-  { name: 'SOBED', description: 'Sociedade Brasileira de Angiologia e Cirurgia Vascular' },
-  { name: 'ADAPT', description: 'Associação Brasileira de Transplantes de Órgãos' },
+  { name: 'SOBED', description: 'Sociedade Brasileira de Endoscopia e Endoscopia Digestiva' },
+  { name: 'ADAPT', description: 'Adapt Consultoria' },
 ]
 
 export default function Clients() {
