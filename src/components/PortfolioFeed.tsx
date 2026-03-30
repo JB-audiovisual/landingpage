@@ -9,61 +9,66 @@ const portfolioItems = [
     id: 1,
     type: 'photo',
     thumbnail: '/portfolio/insta1.jpg',
-    link: 'https://www.instagram.com/p/DFN_1EaR2uV/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Auditório Premium',
   },
   {
     id: 2,
     type: 'photo',
     thumbnail: '/portfolio/insta2.jpg',
-    link: 'https://www.instagram.com/p/DFInwGuxP38/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Johny Bernard - CEO',
   },
   {
     id: 3,
     type: 'reel',
     thumbnail: '/portfolio/insta3.jpg',
-    link: 'https://www.instagram.com/reels/DFDPr1ZRLF2/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Studio Green Screen',
   },
   {
     id: 4,
     type: 'photo',
     thumbnail: '/portfolio/insta4.jpg',
-    link: 'https://www.instagram.com/p/DE7lT5Kx97s/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Equipe Especializada',
   },
   {
     id: 5,
     type: 'photo',
     thumbnail: '/portfolio/insta5.jpg',
-    link: 'https://www.instagram.com/p/DEUvD8-RkK5/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Master Class',
   },
   {
     id: 6,
     type: 'reel',
     thumbnail: '/portfolio/insta6.jpg',
-    link: 'https://www.instagram.com/reels/DET1g-6R6S7/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Transmissão 4K',
   },
   {
     id: 7,
     type: 'photo',
     thumbnail: '/portfolio/insta7.jpg',
-    link: 'https://www.instagram.com/p/DEPIXU6RAx6/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Suporte a Eventos',
   },
   {
     id: 8,
     type: 'photo',
     thumbnail: '/portfolio/insta8.jpg',
-    link: 'https://www.instagram.com/p/DEKCH5mx85y/',
+    link: 'https://www.instagram.com/jb.audiovisual/',
     title: 'Parcerias Estratégicas',
   },
 ]
 
 export default function PortfolioFeed() {
+  // Use a calculation for the animation distance to make it seamless
+  // 8 items * (card width + gap)
+  // Desktop: 8 * (320px + 24px) = 2752px
+  // Mobile: 8 * (280px + 24px) = 2432px
+  
   return (
     <section className="py-20 relative overflow-hidden bg-[#0a0a0a]">
       <div className="container-custom relative z-10">
@@ -92,20 +97,21 @@ export default function PortfolioFeed() {
 
         {/* Scrolling Carousel */}
         <div className="relative group">
-          <div className="flex overflow-hidden">
+          <div className="flex overflow-hidden -mx-4 md:mx-0">
             <motion.div
+              initial={{ x: 0 }}
               animate={{
-                x: [0, -1800],
+                x: ["0%", "-50%"],
               }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 40,
+                  duration: 30,
                   ease: "linear",
                 },
               }}
-              className="flex gap-6 pr-6"
+              className="flex gap-6 pr-6 w-max"
             >
               {[...portfolioItems, ...portfolioItems].map((item, index) => (
                 <div
