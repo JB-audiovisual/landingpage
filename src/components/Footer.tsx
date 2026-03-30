@@ -60,17 +60,9 @@ export default function Footer() {
               >
                 <Instagram className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
               </a>
+
               <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center 
-                         hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 group shadow-sm"
-              >
-                <Youtube className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
-              </a>
-              <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/johny-bernardino-38817757/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center 
