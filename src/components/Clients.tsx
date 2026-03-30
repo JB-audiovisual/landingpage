@@ -6,10 +6,8 @@ import { useRef } from 'react'
 
 const clients = [
   { name: 'AMIB', description: 'Associação de Medicina Intensiva Brasileira' },
-  { name: 'DASA', description: 'Diagnósticos da América' },
-  { name: 'Hospital 9 de Julho', description: 'Rede Hospitalar' },
-  { name: 'Americas', description: 'Rede de Hospitais' },
-  { name: 'Abbott', description: 'Farmacêutica Global' },
+  { name: 'SOBED', description: 'Sociedade Brasileira de Angiologia e Cirurgia Vascular' },
+  { name: 'ADAPT', description: 'Associação Brasileira de Transplantes de Órgãos' },
 ]
 
 export default function Clients() {
@@ -19,7 +17,7 @@ export default function Clients() {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#0f0f0f]" />
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
 
       <div className="container-custom relative z-10" ref={ref}>
         {/* Header */}

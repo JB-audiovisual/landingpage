@@ -45,30 +45,31 @@ export default function Footer() {
               <span className="font-bold text-lg text-white">JB Audiovisual</span>
             </Link>
 
-            <p className="text-white/40 text-sm leading-relaxed mb-6">
+            <p className="text-white/40 text-sm leading-relaxed mb-6 font-medium">
               Transformando eventos em experiências memoráveis desde 2010.
               Tecnologia de ponta para sociedades médicas e empresas.
             </p>
 
-            {/* Social Links */}
-            <div className="flex gap-3">
-              {[
-                { icon: Instagram, href: 'https://www.instagram.com/reels/DMtbW9ts0n5/' },
-                { icon: Linkedin, href: '#' },
-                { icon: Youtube, href: '#' },
-              ].map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center 
-                           border border-white/10 hover:bg-amber-500 hover:border-amber-500 
-                           transition-all duration-300 group"
-                >
-                  <social.icon className="w-5 h-5 text-white/50 group-hover:text-black transition-colors" />
-                </a>
-              ))}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.instagram.com/jb.audiovisual/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center 
+                         hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 group shadow-sm"
+              >
+                <Instagram className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/johny-bernardino-38817757/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center 
+                         hover:bg-amber-500 hover:border-amber-500 transition-all duration-300 group shadow-sm"
+              >
+                <Linkedin className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
+              </a>
             </div>
           </div>
 
@@ -80,7 +81,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/40 hover:text-amber-500 transition-colors text-sm"
+                    className="text-white/40 hover:text-amber-500 transition-colors text-sm font-medium"
                   >
                     {link.label}
                   </Link>
@@ -97,7 +98,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/40 hover:text-amber-500 transition-colors text-sm"
+                    className="text-white/40 hover:text-amber-500 transition-colors text-sm font-medium"
                   >
                     {link.label}
                   </Link>
@@ -113,13 +114,13 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:johnybernard@hotmail.com"
-                  className="text-white/40 hover:text-amber-500 transition-colors"
+                  className="text-white/40 hover:text-amber-500 transition-colors font-medium"
                 >
                   johnybernard@hotmail.com
                 </a>
               </li>
-              <li className="text-white/40">São Paulo, SP - Brasil</li>
-              <li className="text-white/40">CNPJ: 21.252.112/0001-00</li>
+              <li className="text-white/40 font-medium">São Paulo, SP - Brasil</li>
+              <li className="text-white/40 opacity-60">CNPJ: 21.252.112/0001-00</li>
             </ul>
           </div>
         </div>
@@ -127,7 +128,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-12 mt-12 
                        border-t border-white/10">
-          <p className="text-white/30 text-sm">
+          <p className="text-white/30 text-sm font-medium">
             © {new Date().getFullYear()} JB Audiovisual & Tecnologia. Todos os direitos reservados.
           </p>
 

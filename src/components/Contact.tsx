@@ -20,11 +20,35 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    setIsSubmitting(false)
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')
-    setFormData({ name: '', email: '', phone: '', eventType: '', message: '' })
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'SEU_ACCESS_KEY_AQUI', // O usuário deve substituir por sua chave
+          subject: `Novo Contato: ${formData.eventType} - ${formData.name}`,
+          from_name: 'JB Audiovisual Landing Page',
+          ...formData
+        })
+      })
+
+      const result = await response.json()
+      
+      if (result.success) {
+        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')
+        setFormData({ name: '', email: '', phone: '', eventType: '', message: '' })
+      } else {
+        alert('Ocorreu um erro ao enviar. Por favor, tente novamente ou use o WhatsApp.')
+      }
+    } catch (error) {
+      alert('Erro de conexão. Por favor, tente contato via WhatsApp.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -77,7 +101,7 @@ export default function Contact() {
                          hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center 
-                              group-hover:bg-amber-500 transition-all duration-300">
+                               group-hover:bg-amber-500 transition-all duration-300">
                   <Mail className="w-5 h-5 text-amber-500 group-hover:text-black transition-colors" />
                 </div>
                 <div>
@@ -87,14 +111,14 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://wa.me/5511999999999"
+                href={`https://wa.me/5511961116437?text=${encodeURIComponent(`Olá, gostaria de solicitar um orçamento para um evento`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-white/[0.02] rounded-xl border border-white/10 
                          hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center 
-                              group-hover:bg-amber-500 transition-all duration-300">
+                               group-hover:bg-amber-500 transition-all duration-300">
                   <MessageCircle className="w-5 h-5 text-amber-500 group-hover:text-black transition-colors" />
                 </div>
                 <div>
@@ -136,6 +160,7 @@ export default function Contact() {
                   <input
                     type="text"
                     value={formData.name}
+                    name="name"
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white 
@@ -149,6 +174,7 @@ export default function Contact() {
                   <input
                     type="email"
                     value={formData.email}
+                    name="email"
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white 
@@ -165,6 +191,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     value={formData.phone}
+                    name="phone"
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white 
                              placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 
@@ -176,9 +203,10 @@ export default function Contact() {
                   <label className="block text-white/60 text-sm mb-2">Tipo de evento</label>
                   <select
                     value={formData.eventType}
+                    name="eventType"
                     onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white 
-                             focus:outline-none focus:border-amber-500/50 transition-colors"
+                             focus:outline-none focus:border-amber-500/50 transition-colors outline-none"
                   >
                     <option value="" className="bg-slate-900">Selecione</option>
                     <option value="transmissao" className="bg-slate-900">Transmissão ao Vivo</option>
@@ -193,6 +221,7 @@ export default function Contact() {
                 <label className="block text-white/60 text-sm mb-2">Mensagem</label>
                 <textarea
                   value={formData.message}
+                  name="message"
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={4}
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white 

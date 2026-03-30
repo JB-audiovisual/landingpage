@@ -48,7 +48,7 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/5'
+          ? 'bg-white/10 backdrop-blur-md border-b border-white/10 shadow-lg'
           : 'bg-transparent'
       )}
     >
@@ -125,7 +125,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/5"
+            className="lg:hidden bg-[#111111]/95 backdrop-blur-md border-t border-white/10"
           >
             <div className="container-custom py-6 space-y-4">
               {navLinks.map((link, index) => (
