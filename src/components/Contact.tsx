@@ -29,7 +29,7 @@ export default function Contact() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'SEU_ACCESS_KEY_AQUI', // O usuário deve substituir por sua chave
+          access_key: 'a0beeeec-50ae-4fac-86cc-5ae49060685d',
           subject: `Novo Contato: ${formData.eventType} - ${formData.name}`,
           from_name: 'JB Audiovisual Landing Page',
           ...formData
