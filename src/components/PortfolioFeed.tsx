@@ -9,64 +9,56 @@ const portfolioItems = [
     id: 1,
     type: 'photo',
     thumbnail: '/portfolio/insta1.jpg',
-    likes: '1.2k',
-    comments: '48',
+    link: 'https://www.instagram.com/p/DFN_1EaR2uV/',
     title: 'Auditório Premium',
   },
   {
     id: 2,
     type: 'photo',
     thumbnail: '/portfolio/insta2.jpg',
-    likes: '850',
-    comments: '32',
+    link: 'https://www.instagram.com/p/DFInwGuxP38/',
     title: 'Johny Bernard - CEO',
   },
   {
     id: 3,
     type: 'reel',
     thumbnail: '/portfolio/insta3.jpg',
-    likes: '2.5k',
-    comments: '89',
+    link: 'https://www.instagram.com/reels/DFDPr1ZRLF2/',
     title: 'Studio Green Screen',
   },
   {
     id: 4,
     type: 'photo',
     thumbnail: '/portfolio/insta4.jpg',
-    likes: '1.1k',
-    comments: '56',
+    link: 'https://www.instagram.com/p/DE7lT5Kx97s/',
     title: 'Equipe Especializada',
   },
   {
     id: 5,
     type: 'photo',
     thumbnail: '/portfolio/insta5.jpg',
-    likes: '3.2k',
-    comments: '120',
+    link: 'https://www.instagram.com/p/DEUvD8-RkK5/',
     title: 'Master Class',
   },
   {
     id: 6,
     type: 'reel',
     thumbnail: '/portfolio/insta6.jpg',
-    likes: '940',
-    comments: '42',
+    link: 'https://www.instagram.com/reels/DET1g-6R6S7/',
     title: 'Transmissão 4K',
   },
   {
     id: 7,
     type: 'photo',
     thumbnail: '/portfolio/insta7.jpg',
-    likes: '720',
-    comments: '18',
+    link: 'https://www.instagram.com/p/DEPIXU6RAx6/',
     title: 'Suporte a Eventos',
   },
   {
     id: 8,
     type: 'photo',
     thumbnail: '/portfolio/insta8.jpg',
-    likes: '1.5k',
-    comments: '64',
+    link: 'https://www.instagram.com/p/DEKCH5mx85y/',
     title: 'Parcerias Estratégicas',
   },
 ]
@@ -135,24 +127,22 @@ export default function PortfolioFeed() {
                           <Play className="w-6 h-6 fill-white" />
                         </div>
                       )}
-                      <div className="flex items-center gap-6 font-bold">
-                        <span className="flex items-center gap-2">
-                          <Heart className="w-5 h-5 fill-white" /> {item.likes}
-                        </span>
-                        <span className="flex items-center gap-2">
-                          <MessageCircle className="w-5 h-5 fill-white" /> {item.comments}
-                        </span>
-                      </div>
                     </div>
 
-                    {/* Type Indicator */}
-                    <div className="absolute top-4 right-4 p-2 bg-black/20 backdrop-blur-md rounded-lg border border-white/10 group-hover/card:bg-amber-500 group-hover/card:border-amber-400 transition-colors">
+                    {/* Type Indicator / Link */}
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 p-2 bg-black/20 backdrop-blur-md rounded-lg border border-white/10 hover:bg-amber-500 hover:border-amber-400 group-hover/card:bg-amber-500 group-hover/card:border-amber-400 transition-all duration-300 z-20"
+                      title="Ver no Instagram"
+                    >
                       {item.type === 'reel' ? (
                         <Play className="w-4 h-4 text-white fill-white" />
                       ) : (
                         <Instagram className="w-4 h-4 text-white" />
                       )}
-                    </div>
+                    </a>
                   </div>
                 </div>
               ))}
